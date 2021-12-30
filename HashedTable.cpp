@@ -1,4 +1,3 @@
-
 #include "HashedTable.h"
 #include <string.h>
 

@@ -8,6 +8,10 @@ struct Elem { //элемент таблицы
     char* info; //информация
     Elem () : key(0),occupied(0),info(NULL) {}; //конструктор по умолчанию
     ~Elem () { if (info!=NULL) delete [] info; } //деструктор для строки
+    void set_key(int arg){ key = arg;}
+    void set_occupied(int arg){ occupied = arg;}
+    int get_occupied() {return occupied;}
+    int get_key() {return key;}
     Elem (const Elem& el):key(el.key),occupied(el.occupied) { //конструктор копирования
         info = new char [strlen(el.info)+1]; strcpy (info, el.info);}
         Elem& operator = (const Elem el) { //оператор присваивания
