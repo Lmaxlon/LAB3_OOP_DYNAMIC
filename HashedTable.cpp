@@ -46,7 +46,18 @@ CHashedTable::CHashedTable (const CHashedTable &t) //конструктор ко
         strcpy (data[i].info, t.data[i].info);
     }
 }
-
+CHashedTable::CHashedTable(CHashedTable &&t){//конструктор перемещения
+         localadding = false;
+         data = new Elem [t.size];
+         count = t.count; //копируем всё из другого экземпляра
+         size = t.size;
+         for (int i = 0; i<size; i++) {
+             data[i].key = t.data[i].key;
+             data[i].occupied = t.data[i].occupied;
+             data[i].info = new char [strlen(t.data[i].info)+1];
+             strcpy (data[i].info, t.data[i].info);
+         }
+}
 CHashedTable& CHashedTable::operator= (const CHashedTable t) //оператор присваивания
         {
     localadding = false;

@@ -35,6 +35,7 @@ class CHashedTable
             CHashedTable(); //конструктор по умолчанию
             CHashedTable (Elem* elem, int n); //конструктор из массива
             CHashedTable (const CHashedTable &t); //конструктор копирования
+            CHashedTable (CHashedTable &&t);
             ~CHashedTable(); //деструктор
 
             CHashedTable& operator= (const CHashedTable t); //оператор присваивания
@@ -52,7 +53,6 @@ class CHashedTable
             int get_step(){return step;}
             int get_size(){return size;}
             int get_count(){return count;}
-            void set_step(int arg){step = arg;}
             void set_size(int arg){size = arg;}
             void set_count(int arg){count = arg;}
             void set_localadding(bool arg){localadding = arg;}
