@@ -49,7 +49,14 @@ class CHashedTable
 
             friend ostream& operator << (ostream& str, CHashedTable& t); //вывод
             friend istream& operator >> (istream& str, CHashedTable& t); //ввод
-
+            int get_step(){return step;}
+            int get_size(){return size;}
+            int get_count(){return count;}
+            void set_step(int arg){step = arg;}
+            void set_size(int arg){size = arg;}
+            void set_count(int arg){count = arg;}
+            void set_localadding(bool arg){localadding = arg;}
+            bool get_localadding(){return localadding;}
         private:
             unsigned int Hash (int key); //функция хеширования
             bool HasKey (int key);
